@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+chmod +x zen
+. ../zen/master
+master -I clink
+master $* 
