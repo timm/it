@@ -29,14 +29,15 @@ class it:
         i.__dict__[k] = method(i,v)
     return i
 
-def itDemo()
+def itDemo():
   from datetime import datetime as date
-  def Person(name=name,yob=1809):
+  def Person(name="Abraham",yob=1809):
     def age(i): return date.now().year - i.yob
-    def birthday(i): i.weight *=1.05
-    return o(name=name, yob=yob,weight=100) + locals()
-  p = Person(name"Abraham")
+    def birthday(i): i.weight = int(i.weight*1.05)
+    return it(name=name, yob=yob,weight=100) + locals()
+  #---------------------------
+  p = Person(name="John")
   for _ in range(56): p.birthday()
-  print(p,p.age())
+  print(p, f"age= {p.age()}")
 
 __name__ == "__main__" and itDemo()

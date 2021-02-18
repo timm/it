@@ -2,9 +2,8 @@
 
 chmod +x zen
 . ../zen/master
-if  [[ $1 == "-T" ]]; then  (
-  o python3 it.py -h
-  ) | cat -n > it.out
+if  [[ $1 == "-T" ]]; then  
+  o python3 it.py | cat -n > it.out
   cat it.out 
 else  master $* clink
 fi
