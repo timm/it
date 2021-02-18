@@ -54,11 +54,13 @@ from types import FunctionType as Fun
 class it:
   &#34;Simple container of names fields, with methods.&#34;
   def __init__(i, **d): i.__dict__.update(d)
+
   def __repr__(i):
     &#34;Pretty print, sorted keys, ignore private keys (those  with `_`).&#34;
     return &#34;{&#34;+ &#39;, &#39;.join( 
       [f&#34;:{k} {v}&#34; for k, v in sorted(i.__dict__.items())
        if  type(v) != Fun and k[0] != &#34;_&#34;])+&#34;}&#34;
+
   def __add__(i, maybe):
     &#34;For all functions, add them as methods to `i`.&#34;
     def method(i,f): 
@@ -74,6 +76,7 @@ def itDemo():
     def age(i): return date.now().year - i.yob
     def birthday(i): i.weight = int(i.weight*1.05)
     return it(name=name, yob=yob,weight=100) + locals()
+
   #---------------------------
   p = Person(name=&#34;John&#34;)
   for _ in range(56): p.birthday()
@@ -104,6 +107,7 @@ __name__ == &#34;__main__&#34; and itDemo()</code></pre>
     def age(i): return date.now().year - i.yob
     def birthday(i): i.weight = int(i.weight*1.05)
     return it(name=name, yob=yob,weight=100) + locals()
+
   #---------------------------
   p = Person(name=&#34;John&#34;)
   for _ in range(56): p.birthday()
@@ -128,11 +132,13 @@ __name__ == &#34;__main__&#34; and itDemo()</code></pre>
 <pre><code class="python">class it:
   &#34;Simple container of names fields, with methods.&#34;
   def __init__(i, **d): i.__dict__.update(d)
+
   def __repr__(i):
     &#34;Pretty print, sorted keys, ignore private keys (those  with `_`).&#34;
     return &#34;{&#34;+ &#39;, &#39;.join( 
       [f&#34;:{k} {v}&#34; for k, v in sorted(i.__dict__.items())
        if  type(v) != Fun and k[0] != &#34;_&#34;])+&#34;}&#34;
+
   def __add__(i, maybe):
     &#34;For all functions, add them as methods to `i`.&#34;
     def method(i,f): 
